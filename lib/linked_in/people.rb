@@ -97,6 +97,16 @@ module LinkedIn
       get(path, options)
     end
 
+    # Retrieve the users email address
+    #
+    # Permissions: r_liteprofile
+    def email(id={}, options={})
+      options = parse_id(id, options)
+      query = "?q=members&projection=(elements*(handle~))"
+      path = "#{email_path(options)}#{query}"
+      get(path, options)
+    end
+
 
     protected ############################################################
 
