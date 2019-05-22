@@ -150,6 +150,7 @@ module LinkedIn
     end
 
     def email_path(options={})
+      options[:fields] = []
       "/emailAddress"
     end
 
